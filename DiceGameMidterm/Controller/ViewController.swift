@@ -56,10 +56,16 @@ class ViewController: UIViewController {
     
     
     @IBAction func rollBtnPressed(_ sender: Any) {
+        if(game.score < 10){
+            rollButton.isEnabled = false
+            rollButton.setTitle("less than 10 points", for: .normal)
+            rollButton.backgroundColor = UIColor.gray
+        }
+        
         game.checkMatch(game.diceInGame)
         game.spin()
         updateViewFromModel()
-        print(game.score)
+        //print(game.score)
     }
     
     @IBAction func resetBtnPressed(_ sender: Any) {
