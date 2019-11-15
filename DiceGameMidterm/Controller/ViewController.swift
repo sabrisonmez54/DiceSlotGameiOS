@@ -8,25 +8,29 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController
+{
     var game = SlotGame()
 
     @IBOutlet weak var view1: UIView!
     @IBOutlet weak var view2: UIView!
     @IBOutlet weak var view3: UIView!
+
     @IBOutlet weak var rollButton: UIButton!
     @IBOutlet weak var resetBtn: UIButton!
     
     @IBOutlet weak var scoreLabel: UILabel!
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         updateViewFromModel()
         
     }
     
-    func updateViewFromModel() {
+    func updateViewFromModel()
+    {
        
      let rect = CGRect(x: 0, y: 0, width: self.view1.bounds.width, height: self.view1.bounds.height)
        
@@ -55,8 +59,10 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func rollBtnPressed(_ sender: Any) {
-        if(game.score < 10){
+    @IBAction func rollBtnPressed(_ sender: Any)
+    {
+        if(game.score < 10)
+        {
             rollButton.isEnabled = false
             rollButton.setTitle("less than 10 points", for: .normal)
             rollButton.backgroundColor = UIColor.gray
@@ -68,10 +74,10 @@ class ViewController: UIViewController {
         //print(game.score)
     }
     
-    @IBAction func resetBtnPressed(_ sender: Any) {
+    @IBAction func resetBtnPressed(_ sender: Any)
+    {
         game.reset()
         updateViewFromModel()
     }
-    
 }
 

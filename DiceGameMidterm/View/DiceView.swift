@@ -10,23 +10,27 @@ import UIKit
 
 class DiceView: UIView
 {
-
-    var color : Dice.Color = Dice.Color.green {
-        didSet {
+    var color : Dice.Color = Dice.Color.green
+    {
+        didSet
+        {
             setNeedsDisplay()
             setNeedsLayout()
         }
     }
     
     
-    var number : Dice.Number = Dice.Number.one {
-        didSet {
+    var number : Dice.Number = Dice.Number.one
+    {
+        didSet
+        {
             setNeedsDisplay()
             setNeedsLayout()
         }
     }
     
-    private var colorForPath : UIColor {
+    private var colorForPath : UIColor
+    {
         switch color {
         case .red:
              return Color.red
@@ -38,26 +42,9 @@ class DiceView: UIView
             return Color.green
         }
     }
-   
-    private func drawCirce() {
-      //  let circle = UIBezierPath(arcCenter: CGPoint(x: 100, y: 100), radius: CGFloat(20), startAngle: CGFloat(0), endAngle: CGFloat(Double.pi * 2), clockwise: true)
-       // path = UIBezierPath()
-        
-        //path.addArc(withCenter: CGPoint(x: self.bounds.size.width / 2, y: self.bounds.size.height / 2), radius: 15, startAngle: 0, endAngle: .pi * 2, clockwise: true)
-        
-       // path.close()
-//        path.move(to: .zero)
-//        path.addLine(to: CGPoint(x: 50, y: 50))
-//        path.addLine(to: CGPoint(x: 50, y: 150))
-//        path.addLine(to: CGPoint(x: 150, y: 50))
-//        path.addLine(to: .zero)
-//        path.close()
-
-      
-
-    }
     
-    private func drawCircle() -> UIBezierPath {
+    private func drawCircle() -> UIBezierPath
+    {
         
         let circle = UIBezierPath()
         circle.addArc(withCenter: CGPoint(x: self.bounds.size.width / 2, y: self.bounds.size.height / 2), radius: 15, startAngle: 0, endAngle: .pi * 2, clockwise: true)
@@ -68,7 +55,8 @@ class DiceView: UIView
     }
     
     
-    private func showPath(_ path: UIBezierPath) {
+    private func showPath(_ path: UIBezierPath)
+    {
         var path = replicatePath(path)
         colorForPath.setStroke()
         path = shadePath(path)
@@ -80,9 +68,13 @@ class DiceView: UIView
     private func replicatePath(_ path: UIBezierPath) -> UIBezierPath {
         let replicatedPath = UIBezierPath()
         
-        if number == .one {
+        if number == .one
+        {
             replicatedPath.append(path)
-        } else if number == .two {
+        }
+        
+        else if number == .two
+        {
             let leftPath = UIBezierPath()
             leftPath.append(path)
             let leftPathTransform = CGAffineTransform(
@@ -97,7 +89,10 @@ class DiceView: UIView
             
             replicatedPath.append(leftPath)
             replicatedPath.append(rightPath)
-        } else if number == .three {
+        }
+        
+        else if number == .three
+        {
             let leftPath = UIBezierPath()
             leftPath.append(path)
             let leftPathTransform = CGAffineTransform(
@@ -113,7 +108,10 @@ class DiceView: UIView
             replicatedPath.append(leftPath)
             replicatedPath.append(path)
             replicatedPath.append(rightPath)
-        }else if number == .four {
+        }
+        
+        else if number == .four
+        {
             
             let leftPath = UIBezierPath()
             leftPath.append(path)
@@ -144,7 +142,10 @@ class DiceView: UIView
             replicatedPath.append(rightPath)
             replicatedPath.append(rightUpPath)
             
-        }else if number == .five {
+        }
+        
+        else if number == .five
+        {
             let leftPath = UIBezierPath()
             leftPath.append(path)
             let leftPathTransform = CGAffineTransform(
@@ -175,6 +176,7 @@ class DiceView: UIView
             replicatedPath.append(rightUpPath)
             replicatedPath.append(path)
         }
+            
         else if number == .six
         {
             let leftPath = UIBezierPath()
@@ -226,7 +228,8 @@ class DiceView: UIView
         return replicatedPath
     }
    
-    private func shadePath(_ path: UIBezierPath) -> UIBezierPath {
+    private func shadePath(_ path: UIBezierPath) -> UIBezierPath
+    {
         let shadedPath = UIBezierPath()
         shadedPath.append(path)
         colorForPath.setFill()
@@ -235,9 +238,9 @@ class DiceView: UIView
     }
     
     
-    override func draw(_ rect: CGRect) {
+    override func draw(_ rect: CGRect)
+    {
         
-       
             let roundedRect = UIBezierPath(roundedRect: bounds, cornerRadius: 0.0)
             roundedRect.addClip()
             
@@ -250,16 +253,9 @@ class DiceView: UIView
         
             showPath(path)
         
-  
-        
+        }
     }
-  
 
-}
-
-
-    
-    
 
 extension DiceView{
     /***********************************************************/

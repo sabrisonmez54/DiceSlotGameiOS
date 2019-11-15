@@ -78,42 +78,52 @@ struct SlotGame {
         // all dice have the same color
         if (selectedDie[0].color == selectedDie[1].color && selectedDie[0].color == selectedDie[2].color)
         {
-            //all dice are the same number
-            if(selectedDie[0].number == selectedDie[1].number && selectedDie[0].number == selectedDie[2].number)
-            {
-                    score += 300
-            }
-            // all dice same color but all different number
-            if (selectedDie[0].number != selectedDie[1].number && selectedDie[0].number != selectedDie[2].number)
-            {
-                if (selectedDie[1].number != selectedDie[2].number)
+            if(selectedDie[1].color == selectedDie[2].color){
+                
+                //all dice are the same number
+                if(selectedDie[0].number == selectedDie[1].number && selectedDie[0].number == selectedDie[2].number)
                 {
-                    score += 250
+                    if (selectedDie[1].number == selectedDie[2].number)
+                    {
+                        score += 300
+                    }
+                    
                 }
-                else
-                { //all dice are the same color (numbers are neither same nor all different)
-                    score += 200
+                
+                // all dice same color but all different number
+                if (selectedDie[0].number != selectedDie[1].number && selectedDie[0].number != selectedDie[2].number)
+                {
+                    if (selectedDie[1].number != selectedDie[2].number)
+                    {
+                        score += 250
+                    }
+                    else
+                    { //all dice are the same color (numbers are neither same nor all different)
+                        score += 200
+                    }
                 }
             }
         }
         //all dice are different color
         if (selectedDie[0].color != selectedDie[1].color && selectedDie[0].color != selectedDie[2].color)
         {
-            //all dice are same number
-            if(selectedDie[0].number == selectedDie[1].number && selectedDie[0].number == selectedDie[2].number)
-            {
-                score += 150
-            }
-                //all dice different color and different numbers
-            if(selectedDie[0].number != selectedDie[1].number && selectedDie[0].number != selectedDie[2].number)
-            {
-                if (selectedDie[1].number != selectedDie[2].number)
+            if(selectedDie[1].color != selectedDie[2].color){
+                //all dice are same number
+                if(selectedDie[0].number == selectedDie[1].number && selectedDie[0].number == selectedDie[2].number)
                 {
-                    score += 100
+                    score += 150
                 }
-                else
-                { //all dice are the same number (colors are neither all the same nor all different)
-                    score += 50
+                //all dice different color and different numbers
+                if(selectedDie[0].number != selectedDie[1].number && selectedDie[0].number != selectedDie[2].number)
+                {
+                    if (selectedDie[1].number != selectedDie[2].number)
+                    {
+                        score += 100
+                    }
+                    else
+                    { //all dice are the same number (colors are neither all the same nor all different)
+                        score += 50
+                    }
                 }
             }
         }

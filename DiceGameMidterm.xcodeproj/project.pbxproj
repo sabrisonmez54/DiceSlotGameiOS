@@ -16,7 +16,6 @@
 		1E6E2440237C7E8B00E8B782 /* SlotGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E243F237C7E8B00E8B782 /* SlotGame.swift */; };
 		1E6E2442237C7E9A00E8B782 /* Dice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E2441237C7E9A00E8B782 /* Dice.swift */; };
 		1E6E2444237C82BF00E8B782 /* DiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E2443237C82BE00E8B782 /* DiceView.swift */; };
-		1E6E2448237E03B800E8B782 /* DiceContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E2447237E03B800E8B782 /* DiceContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +30,6 @@
 		1E6E243F237C7E8B00E8B782 /* SlotGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotGame.swift; sourceTree = "<group>"; };
 		1E6E2441237C7E9A00E8B782 /* Dice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dice.swift; sourceTree = "<group>"; };
 		1E6E2443237C82BE00E8B782 /* DiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceView.swift; sourceTree = "<group>"; };
-		1E6E2447237E03B800E8B782 /* DiceContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				1E6E2443237C82BE00E8B782 /* DiceView.swift */,
-				1E6E2447237E03B800E8B782 /* DiceContainerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -180,7 +177,6 @@
 				1E6E2442237C7E9A00E8B782 /* Dice.swift in Sources */,
 				1E6E2428237C7CA000E8B782 /* AppDelegate.swift in Sources */,
 				1E6E2430237C7CA000E8B782 /* DiceGameMidterm.xcdatamodeld in Sources */,
-				1E6E2448237E03B800E8B782 /* DiceContainerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
