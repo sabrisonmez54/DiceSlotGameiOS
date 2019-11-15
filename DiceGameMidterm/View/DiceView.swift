@@ -148,36 +148,79 @@ class DiceView: UIView
             let leftPath = UIBezierPath()
             leftPath.append(path)
             let leftPathTransform = CGAffineTransform(
-                translationX: leftThreePathTranslation.x, y: leftThreePathTranslation.y)
+                translationX: leftfivePathTranslation.x, y: leftfivePathTranslation.y)
             leftPath.apply(leftPathTransform)
+            
+            let leftUpPath = UIBezierPath()
+            leftUpPath.append(path)
+            let leftUpPathTransform = CGAffineTransform(
+                translationX: leftUpfivePathTranslation.x, y: leftUpfivePathTranslation.y)
+            leftUpPath.apply(leftUpPathTransform)
             
             let rightPath = UIBezierPath()
             rightPath.append(path)
             let rightPathTransform = CGAffineTransform(
-                translationX: rightThreePathTranslation.x, y: rightThreePathTranslation.y)
+                translationX: rightfivePathTranslation.x, y: rightfivePathTranslation.y)
             rightPath.apply(rightPathTransform)
             
+            let rightUpPath = UIBezierPath()
+            rightUpPath.append(path)
+            let rightUpPathTransform = CGAffineTransform(
+                translationX: rightUpfivePathTranslation.x, y: rightUpfivePathTranslation.y)
+            rightUpPath.apply(rightUpPathTransform)
+            
             replicatedPath.append(leftPath)
-            replicatedPath.append(path)
+            replicatedPath.append(leftUpPath)
             replicatedPath.append(rightPath)
+            replicatedPath.append(rightUpPath)
+            replicatedPath.append(path)
         }
         else if number == .six
-{
+        {
             let leftPath = UIBezierPath()
             leftPath.append(path)
             let leftPathTransform = CGAffineTransform(
-                translationX: leftThreePathTranslation.x, y: leftThreePathTranslation.y)
+                translationX: leftSixPathTranslation.x, y: leftSixPathTranslation.y)
             leftPath.apply(leftPathTransform)
+            
+            let leftUpPath = UIBezierPath()
+            leftUpPath.append(path)
+            let leftUpPathTransform = CGAffineTransform(
+                translationX: leftUpSixPathTranslation.x, y: leftUpSixPathTranslation.y)
+            leftUpPath.apply(leftUpPathTransform)
             
             let rightPath = UIBezierPath()
             rightPath.append(path)
             let rightPathTransform = CGAffineTransform(
-                translationX: rightThreePathTranslation.x, y: rightThreePathTranslation.y)
+                translationX: rightUpSixPathTranslation.x, y: rightSixPathTranslation.y)
             rightPath.apply(rightPathTransform)
             
+            let rightUpPath = UIBezierPath()
+            rightUpPath.append(path)
+            let rightUpPathTransform = CGAffineTransform(
+                translationX: rightUpSixPathTranslation.x, y: rightUpSixPathTranslation.y)
+            rightUpPath.apply(rightUpPathTransform)
+            
+            let centerDownPath = UIBezierPath()
+            centerDownPath.append(path)
+            let centerDownPathTransform = CGAffineTransform(
+                translationX: centerDownSixPathTranslation.x, y: centerDownSixPathTranslation.y)
+            centerDownPath.apply(centerDownPathTransform)
+            
+            let centerUpPath = UIBezierPath()
+            centerUpPath.append(path)
+            let centerUpPathTransform = CGAffineTransform(
+                translationX: centerUpSixPathTranslation.x, y: centerUpSixPathTranslation.y)
+            centerUpPath.apply(centerUpPathTransform)
+            
+            
             replicatedPath.append(leftPath)
-            replicatedPath.append(path)
+            replicatedPath.append(leftUpPath)
             replicatedPath.append(rightPath)
+            replicatedPath.append(rightUpPath)
+            replicatedPath.append(centerUpPath)
+            replicatedPath.append(centerDownPath)
+            
         }
         
         return replicatedPath
@@ -296,5 +339,56 @@ extension DiceView {
     }
     
     //5 die
+    private var leftfivePathTranslation: CGPoint {
+        return CGPoint(x: self.bounds.size.width * -0.3,
+                       y: self.bounds.height * -0.25 )
+    }
+    
+    private var leftUpfivePathTranslation: CGPoint {
+        return CGPoint(x: self.bounds.size.width * -0.3,
+                       y: self.bounds.height * 0.25)
+    }
+    
+    private var rightfivePathTranslation: CGPoint {
+        return CGPoint(x: self.bounds.size.width * 0.3,
+                       y: self.bounds.height * -0.25)
+    }
+    private var rightUpfivePathTranslation: CGPoint {
+        return CGPoint(x: self.bounds.size.width * 0.3,
+                       y: self.bounds.height * 0.25)
+    }
+    
+    
+    //6 die
+    private var leftSixPathTranslation: CGPoint {
+        return CGPoint(x: self.bounds.size.width * -0.3,
+                       y: self.bounds.height * -0.25 )
+    }
+    
+    
+    private var leftUpSixPathTranslation: CGPoint {
+        return CGPoint(x: self.bounds.size.width * -0.3,
+                       y: self.bounds.height * 0.25)
+    }
+    
+    private var rightSixPathTranslation: CGPoint {
+        return CGPoint(x: self.bounds.size.width * 0.3,
+                       y: self.bounds.height * -0.25)
+    }
+    private var rightUpSixPathTranslation: CGPoint {
+        return CGPoint(x: self.bounds.size.width * 0.3,
+                       y: self.bounds.height * 0.25)
+    }
    
+    private var centerDownSixPathTranslation: CGPoint {
+        return CGPoint(x: 0.0,
+                       y: self.bounds.height * -0.25 )
+    }
+    
+    private var centerUpSixPathTranslation: CGPoint {
+        return CGPoint(x: 0.0,
+                       y: self.bounds.height * 0.25 )
+    }
+    
+    
 }
