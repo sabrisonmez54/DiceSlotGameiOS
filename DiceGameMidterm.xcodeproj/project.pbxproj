@@ -13,6 +13,10 @@
 		1E6E2430237C7CA000E8B782 /* DiceGameMidterm.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E242E237C7CA000E8B782 /* DiceGameMidterm.xcdatamodeld */; };
 		1E6E2432237C7CA100E8B782 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E6E2431237C7CA100E8B782 /* Assets.xcassets */; };
 		1E6E2435237C7CA200E8B782 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E6E2433237C7CA200E8B782 /* LaunchScreen.storyboard */; };
+		1E6E2440237C7E8B00E8B782 /* SlotGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E243F237C7E8B00E8B782 /* SlotGame.swift */; };
+		1E6E2442237C7E9A00E8B782 /* Dice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E2441237C7E9A00E8B782 /* Dice.swift */; };
+		1E6E2444237C82BF00E8B782 /* DiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E2443237C82BE00E8B782 /* DiceView.swift */; };
+		1E6E2448237E03B800E8B782 /* DiceContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E2447237E03B800E8B782 /* DiceContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		1E6E2431237C7CA100E8B782 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E6E2434237C7CA200E8B782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E6E2436237C7CA200E8B782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E6E243F237C7E8B00E8B782 /* SlotGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotGame.swift; sourceTree = "<group>"; };
+		1E6E2441237C7E9A00E8B782 /* Dice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dice.swift; sourceTree = "<group>"; };
+		1E6E2443237C82BE00E8B782 /* DiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceView.swift; sourceTree = "<group>"; };
+		1E6E2447237E03B800E8B782 /* DiceContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +64,10 @@
 		1E6E2426237C7CA000E8B782 /* DiceGameMidterm */ = {
 			isa = PBXGroup;
 			children = (
+				1E6E243E237C7CCF00E8B782 /* Model */,
+				1E6E243C237C7CBD00E8B782 /* View */,
+				1E6E243D237C7CC300E8B782 /* Controller */,
 				1E6E2427237C7CA000E8B782 /* AppDelegate.swift */,
-				1E6E2429237C7CA000E8B782 /* ViewController.swift */,
 				1E6E242B237C7CA000E8B782 /* Main.storyboard */,
 				1E6E2431237C7CA100E8B782 /* Assets.xcassets */,
 				1E6E2433237C7CA200E8B782 /* LaunchScreen.storyboard */,
@@ -65,6 +75,32 @@
 				1E6E242E237C7CA000E8B782 /* DiceGameMidterm.xcdatamodeld */,
 			);
 			path = DiceGameMidterm;
+			sourceTree = "<group>";
+		};
+		1E6E243C237C7CBD00E8B782 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1E6E2443237C82BE00E8B782 /* DiceView.swift */,
+				1E6E2447237E03B800E8B782 /* DiceContainerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1E6E243D237C7CC300E8B782 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1E6E2429237C7CA000E8B782 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1E6E243E237C7CCF00E8B782 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1E6E243F237C7E8B00E8B782 /* SlotGame.swift */,
+				1E6E2441237C7E9A00E8B782 /* Dice.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +175,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E6E242A237C7CA000E8B782 /* ViewController.swift in Sources */,
+				1E6E2444237C82BF00E8B782 /* DiceView.swift in Sources */,
+				1E6E2440237C7E8B00E8B782 /* SlotGame.swift in Sources */,
+				1E6E2442237C7E9A00E8B782 /* Dice.swift in Sources */,
 				1E6E2428237C7CA000E8B782 /* AppDelegate.swift in Sources */,
 				1E6E2430237C7CA000E8B782 /* DiceGameMidterm.xcdatamodeld in Sources */,
+				1E6E2448237E03B800E8B782 /* DiceContainerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
